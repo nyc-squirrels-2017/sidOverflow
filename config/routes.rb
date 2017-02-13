@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :destroy]
 
-  post 'sessions/login', to: 'sessions#login'
+  get '/', to: redirect('/questions')
 
+  post 'sessions/login', to: 'sessions#login'
 end
