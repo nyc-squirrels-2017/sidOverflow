@@ -1,0 +1,12 @@
+<div>
+
+  <h1>All Sid's Questions</h1>
+
+  <ul>
+    <% @questions.each do |question| %>
+      <li> <%= question.question %> </li>
+      <li> <%= link_to "Show", question_path(question) %> </li>
+    <% end %>
+  </ul>
+
+</div>
