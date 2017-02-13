@@ -8,12 +8,30 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = current_user.questions.new(question_params)
 
     if @question.save
-
+      redirect_to @question
     else
       render 'new'
+    end
+  end
+
+  def show
+    @question = Question.find_by(id: params[:id])
+  end
+
+  def edit
+    @question = Question.find_by(id: params[:id])
+  end
+
+  def update
+    @question = Question.find_by(id: params[:id])
+
+    if authorized?(@question.user_id) && @question.update(question_params)
+      redirect_to @question
+    else
+      render 'edit'
     end
   end
 
