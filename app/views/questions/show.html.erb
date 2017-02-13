@@ -26,6 +26,12 @@
         <p>
           <%= answer.answer %>
         </p>
+        <% if authorized?(answer.user_id) %>
+          <%= link_to 'Edit', edit_answer_path(answer) %>
+          <%= link_to 'Delete', answer_path(answer),
+                  method: :delete,
+                  data: { confirm: "are you sure?" } %>
+        <% end %>
       </div>
     </li>
   <% end %>
