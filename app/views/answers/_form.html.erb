@@ -1,5 +1,5 @@
-<%= form_for([@question, @question.answers.build]) do |f| %>
-    <% if @answer.errors.any? %>
+<%= form_for([@question, @answer]) do |f| %>
+    <% if @answer && @answer.errors.any? %>
     <h2>
       <%= pluralize(@answer.errors.count, 'error') %> prohibited answer from saving:
     </h2>

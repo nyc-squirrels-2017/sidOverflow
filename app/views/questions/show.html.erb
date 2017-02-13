@@ -15,5 +15,20 @@
 
 <% if login? %>
   <%= render 'answers/form' %>
-
 <% end %>
+
+<div class="">
+  <ul>
+
+  <% @question.answers.each do |answer| %>
+    <li>
+      <div>
+        <p>
+          <%= answer.answer %>
+        </p>
+      </div>
+    </li>
+  <% end %>
+
+  </ul>
+</div>
