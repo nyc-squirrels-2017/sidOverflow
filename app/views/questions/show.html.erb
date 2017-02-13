@@ -12,3 +12,8 @@
         method: :delete,
         data: { confirm: "Are you sure?" } %>
 <% end %>
+
+<% if login? %>
+  <%= render 'answers/form' %>
+
+<% end %>
