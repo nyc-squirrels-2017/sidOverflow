@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>SidOverflow</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,14 +10,36 @@
   </head>
 
   <body>
-    <% if login? %>
-      <%= link_to 'Logout', session_path(current_user),
-                method: :delete %>
-      <%= link_to 'New Question', new_question_path %>
-    <% else %>
-      <%= link_to 'Login', new_session_path %>
-      <%= link_to 'Sign Up', new_user_path %>
-    <% end %>
+    <nav>
+      <ul class='container'>
+        <li id="brand">
+            <a href="/">
+              <i class="fa fa-scribd" aria-hidden="true"></i>
+              <i class="fa fa-xing" aria-hidden="true"></i>
+            </a>
+          </li>
+        <% if login? %>
+          <li class="nav-links">
+            <%= link_to 'Logout', session_path(current_user),
+            method: :delete %>
+          </li>
+          <li class="nav-links">
+            <%= link_to 'New Question', new_question_path %>
+          </li>
+        <% else %>
+          <li class="nav-links">
+            <%= link_to 'Login', new_session_path %>
+          </li>
+
+          <li class="nav-links">
+            <%= link_to 'Sign Up', new_user_path %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+
+    <div class="container">
     <%= yield %>
+    </div>
   </body>
 </html>

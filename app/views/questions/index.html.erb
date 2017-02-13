@@ -1,11 +1,14 @@
-<div>
+<div class="questions">
 
   <h1>All Sid's Questions</h1>
-  <ul>
+
+  <div class="questions-list">
     <% @questions.each do |question| %>
-      <li> <%= question.question %> </li>
-      <li> <%= link_to "Show", question_path(question) %> </li>
+      <div class="question">
+      <span> <%= question.question %> </span>
+      <span> <%= link_to "Show", question_path(question) %> </span>
+      </div>
     <% end %>
-  </ul>
+  </div>
 
 </div>

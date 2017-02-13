@@ -13,3 +13,71 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 700px;
+  margin: 0 auto;
+}
+
+nav {
+  border-bottom: 1px #444 solid;
+  height: 50px;
+}
+
+nav li {
+  list-style: none;
+  display: inline-block;
+  float: right;
+  line-height: 50px;
+}
+
+nav li#brand {
+  float: left;
+}
+
+nav li#brand a {
+  color: #444;
+}
+
+nav i.fa {
+  font-size: 36px;
+}
+
+nav li.nav-links a {
+  margin-right: 5px;
+  background-color: darkred;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+nav li.nav-links a:hover {
+  background-color: #444;
+}
+
+.questions h1 {
+  text-align: center;
+}
+
+.questions a {
+  font-size: 13px;
+  padding: 5px;
+  margin-right: 5px;
+  background-color: #3c6f48;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.questions-list .question {
+  border-top: 1px solid #444;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+}
